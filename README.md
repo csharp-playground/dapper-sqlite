@@ -41,6 +41,7 @@ dnx test
 ## Issue
 
 - System.DllNotFoundException : SQLite.Interop.dll
+- ตอนนี้ยังไม่สามารถใช้ SQLite ได้ เปลี่ยนมาทดสอบกับ MySql แทน
 
 ## ลิงค์
 

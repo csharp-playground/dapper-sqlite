@@ -2,9 +2,10 @@
 using System;
 using System.IO;
 using System.Data.SQLite;
-using System.Data.SQLite.Linq;
-using System.Data;
 using Dapper;
+using System.Data;
+using MySql.Data.MySqlClient;
+using System.Linq;
 
 namespace Models {
 
@@ -18,18 +19,27 @@ namespace Models {
     public class BaseRepository
     {
         public static string DbFile => Path.Combine(Environment.CurrentDirectory, "SimpleDb.sqlite");
-        public static SQLiteConnection Connection() {
-            return new SQLiteConnection($"Data Source={DbFile}");
+        public static IDbConnection Connection()
+        {
+            //return new SQLiteConnection($"Data Source={DbFile}");
+            return new MySqlConnection($"Data Source=localhost; User Id=root;Password=1234;Database=DapperMySql");
         }
     }
 
     public class Respository {
         public void SaveCustomers(Customer customer) {
             if(!File.Exists(BaseRepository.DbFile)) {
+                File.WriteAllText(BaseRepository.DbFile, "");
                 CreateDatabase();
             }
 
-            
+            using(var conn = BaseRepository.Connection()) {
+                conn.Open();
+                customer.Id =
+                    conn.Query<int>(
+                        $"INSERT INTO Customer (FirstName, LastName, DateOfBirth) VALUES(@FirstName, @LastName, @DateOfBirth); SELECT LAST_INSERT_ID();",
+                        customer).First();
+            }
         }
 
         private void CreateDatabase() {
@@ -38,7 +48,7 @@ namespace Models {
                 conn.Execute(@"
                     create table Customer
                     (
-                        ID          integer identity primary key AUTOINCREMENT,
+                        ID          integer primary key AUTO_INCREMENT,
                         FirstName   varchar(100) not null,
                         LastName    varchar(100) not null,
                         DateOfBirth DateTime not null

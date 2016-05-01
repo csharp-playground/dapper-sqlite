@@ -153,6 +153,15 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
+      "MySql.Data/6.9.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MySql.Data.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MySql.Data.dll": {}
+        }
+      },
       "Newtonsoft.Json/7.0.1": {
         "type": "package",
         "compile": {
@@ -160,6 +169,22 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "System.Data.Common/1.0.0-beta2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Data"
+        ],
+        "compile": {
+          "lib/net451/System.Data.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.Common.dll": {}
         }
       },
       "System.Data.SQLite/1.0.101": {
@@ -461,6 +486,15 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
+      "MySql.Data/6.9.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MySql.Data.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MySql.Data.dll": {}
+        }
+      },
       "Newtonsoft.Json/7.0.1": {
         "type": "package",
         "compile": {
@@ -468,6 +502,22 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "System.Data.Common/1.0.0-beta2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Data"
+        ],
+        "compile": {
+          "lib/net451/System.Data.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.Common.dll": {}
         }
       },
       "System.Data.SQLite/1.0.101": {
@@ -769,6 +819,15 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
+      "MySql.Data/6.9.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MySql.Data.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MySql.Data.dll": {}
+        }
+      },
       "Newtonsoft.Json/7.0.1": {
         "type": "package",
         "compile": {
@@ -776,6 +835,22 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "System.Data.Common/1.0.0-beta2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Data"
+        ],
+        "compile": {
+          "lib/net451/System.Data.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.Common.dll": {}
         }
       },
       "System.Data.SQLite/1.0.101": {
@@ -1063,6 +1138,22 @@
         "Microsoft.Extensions.PlatformAbstractions.nuspec"
       ]
     },
+    "MySql.Data/6.9.8": {
+      "type": "package",
+      "sha512": "ZSkMKsB1J9Cb/nO3+GlfX/YttibU23y5ZQtn/xzzl3xfPK512wP1jNjiVG4AFvmeJrf02qHNc/GfXJGYYHN8Pg==",
+      "files": [
+        "CHANGES",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net20/MySql.Data.dll",
+        "lib/net20-cf/MySql.Data.CF.dll",
+        "lib/net40/MySql.Data.dll",
+        "lib/net45/MySql.Data.dll",
+        "MySql.Data.6.9.8.nupkg.sha512",
+        "MySql.Data.nuspec",
+        "Readme.txt"
+      ]
+    },
     "Newtonsoft.Json/7.0.1": {
       "type": "package",
       "sha512": "q3V4KLetMLnt1gpAVWgtXnHjKs0UG/RalBc29u2ZKxd5t5Ze4JBL5WiiYIklJyK/5CRiIiNwigVQUo0FgbsuWA==",
@@ -1082,6 +1173,23 @@
         "Newtonsoft.Json.7.0.1.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "System.Data.Common/1.0.0-beta2": {
+      "type": "package",
+      "sha512": "8nV902qziAcIInJ9iI6qMiImWGk6czEq4xrH5Etn/q8SuIE7ay8Idgmn54YDj2deQFt2hYhJyrqGwDXP58VbBA==",
+      "files": [
+        "lib/aspnet50/System.Data.Common.dll",
+        "lib/aspnet50/System.Data.Common.xml",
+        "lib/aspnetcore50/System.Data.Common.dll",
+        "lib/aspnetcore50/System.Data.Common.xml",
+        "lib/net451/System.Data.Common.dll",
+        "lib/net451/System.Data.Common.xml",
+        "lib/portable-net451+win81+wpa81/System.Data.Common.dll",
+        "lib/portable-net451+win81+wpa81/System.Data.Common.xml",
+        "System.Data.Common.1.0.0-beta2.nupkg",
+        "System.Data.Common.1.0.0-beta2.nupkg.sha512",
+        "System.Data.Common.nuspec"
       ]
     },
     "System.Data.SQLite/1.0.101": {
@@ -1338,10 +1446,13 @@
   "projectFileDependencyGroups": {
     "": [
       "Dapper >= 1.42.0",
+      "MySql.Data >= 6.9.8",
       "System.Data.SQLite >= 1.0.101",
       "xunit.runner.dnx >= 2.1.0-*",
       "xunit >= 2.1.0"
     ],
-    "DNX,Version=v4.5.1": []
+    "DNX,Version=v4.5.1": [
+      "System.Data.Common >= 1.0.0-*"
+    ]
   }
 }
