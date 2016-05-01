@@ -29,6 +29,14 @@ namespace Models {
 
     public class Respository
     {
+        public List<dynamic> Query(string sql) {
+            using(var conn = BaseRepository.Connection()) {
+                conn.Open();
+                var rs = conn.Query<dynamic>(sql).ToList();
+                return rs;
+            }
+        }
+
         public List<Customer> GetCustomers()
         {
             using(var conn = BaseRepository.Connection()) {
