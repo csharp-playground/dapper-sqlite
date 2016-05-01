@@ -6,6 +6,7 @@ using Dapper;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Models {
 
@@ -26,8 +27,18 @@ namespace Models {
         }
     }
 
-    public class Respository {
-        public void SaveCustomers(Customer customer) {
+    public class Respository
+    {
+        public List<Customer> GetCustomers()
+        {
+            using(var conn = BaseRepository.Connection()) {
+                conn.Open();
+                var rs = conn.Query<Customer>("SELECT * FROM Customer").ToList();
+                return rs;
+            }
+        }
+
+        public int SaveCustomers(Customer customer) {
             if(!File.Exists(BaseRepository.DbFile)) {
                 File.WriteAllText(BaseRepository.DbFile, "");
                 CreateDatabase();
@@ -35,10 +46,11 @@ namespace Models {
 
             using(var conn = BaseRepository.Connection()) {
                 conn.Open();
-                customer.Id =
+                var id =
                     conn.Query<int>(
                         $"INSERT INTO Customer (FirstName, LastName, DateOfBirth) VALUES(@FirstName, @LastName, @DateOfBirth); SELECT LAST_INSERT_ID();",
                         customer).First();
+                return id;
             }
         }
 

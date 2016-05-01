@@ -3,8 +3,7 @@ using Xunit;
 using Models;
 using System;
 
-public class SqLiteTests
-{
+public class MySqlTests{
     [Fact]
     public void ShoudCreateSchema()
     {
@@ -16,13 +15,14 @@ public class SqLiteTests
         };
 
         var context = new Respository();
-        context.SaveCustomers(customer);
+        var id = context.SaveCustomers(customer);
+        Assert.True(id > 0);
     }
-}
 
-public class Hello {
     [Fact]
-    public void ShouldCheckEquality() {
-        Assert.Equal(5,5);
+    public void ShouldQuery()
+    {
+        var customers = new Respository().GetCustomers();
+        Assert.True(customers.Count > 0);
     }
 }
