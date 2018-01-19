@@ -3,3 +3,4 @@ obj
 packages
 *.swp
 *.sqlite
+.DS_Store
