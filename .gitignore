@@ -4,3 +4,6 @@ packages
 *.swp
 *.sqlite
 .DS_Store
+pakcages
+paket-files
+.paket

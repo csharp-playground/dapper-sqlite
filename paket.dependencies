@@ -1,0 +1,10 @@
+source https://www.nuget.org/api/v2
+
+#framework:net461
+framework:net461
+
+nuget Dapper
+nuget MySql.Data
+nuget System.Configuration
+nuget NETStandard.Library.NETFramework
+
