@@ -7,4 +7,6 @@ nuget Dapper
 nuget MySql.Data
 nuget System.Configuration
 nuget NETStandard.Library.NETFramework
+nuget Rezoom.SQL.Provider
+nuget SQLProvider
 

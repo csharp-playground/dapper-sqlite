@@ -2,6 +2,12 @@ RESTRICTION: == net461
 NUGET
   remote: https://www.nuget.org/api/v2
     Dapper (1.50.4)
+    FParsec (1.0.3)
+      FSharp.Core (>= 4.0.0.1)
+    FParsec-Pipes (0.4)
+      FParsec (>= 1.0.2)
+    FSharp.Core (4.2.3)
+    LicenseToCIL (0.3)
     Microsoft.NETCore.Platforms (2.0.1)
     MySql.Data (6.10.5)
     NETStandard.Library (2.0.1)
@@ -9,4 +15,10 @@ NUGET
     NETStandard.Library.NETFramework (2.0.0-preview2-25405-01)
       Microsoft.NETCore.Platforms (>= 2.0.0-preview2-25405-01)
       NETStandard.Library (>= 2.0.0-preview2-25401-01)
+    Rezoom (0.4.2)
+    Rezoom.SQL.Provider (0.7.0.36923)
+      FParsec-Pipes (>= 0.4)
+      LicenseToCIL (>= 0.3)
+      Rezoom (>= 0.4.2)
+    SQLProvider (1.1.28)
     System.Configuration (2.0.5)
