@@ -6,6 +6,9 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/obj": true,
-        "**/bin": true
+        "**/bin": true,
+        ".paket": true,
+        "packages": true,
+        ".vscode": true
     }
 }

@@ -1,5 +1,7 @@
 ## Commands
 
+- https://raw.githubusercontent.com/dalers/mywind/master/northwind-erd.png
+
 ```
 docker rm wk-mysql
 docker run --name wk-mysql -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 -d mysql

@@ -1,5 +1,4 @@
 #r "../packages/System.Configuration/System.configuration.dll"
-open System.Windows.Forms
 // #r "../packages/NETStandard.Library/build/netstandard2.0/ref/netstandard.dll"
 #r "../packages/NETStandard.Library/build/netstandard2.0/ref/System.Transactions.dll"
 #r "../packages/MySql.Data/lib/net452/MySql.Data.dll"
